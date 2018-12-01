@@ -1,5 +1,5 @@
 //============================================================================
-// Name        : dynamicRerouter.cpp
+// Name        : costEstimator.cpp
 // Author      : 
 // Version     :
 // Copyright   : Your copyright notice
@@ -15,14 +15,15 @@ class InputUsr{
 private:
 	string origin;
 	string dest;
+	int extraSal;
+	int compansation;
+
 
 public:
 	InputUsr(string o, string d) {
 		origin = o;
 		dest = d;
 	}
-
-
 	void setOrigin(string o){
 		origin = o;
 	}
@@ -34,6 +35,22 @@ public:
 	}
 	string getDest(){
 		return dest;
+	}
+
+	int getCompansation() const {
+		return compansation;
+	}
+
+	void setCompansation(int compansation) {
+		this->compansation = compansation;
+	}
+
+	int getExtraSal() const {
+		return extraSal;
+	}
+
+	void setExtraSal(int extraSal) {
+		this->extraSal = extraSal;
 	}
 };
 
@@ -80,48 +97,39 @@ public:
 };
 
 
-class costCalc{
+class Road{
 
+private:
+	int time;
+	int distance;
+	int timeCost;
+	int fuelCost;
 
+public:
+	int get_timeCost(int salary, int compensation){
+		timeCost = time * (salary + compensation);
 
+		return timeCost;
+	}
 
+	int get_fuelCost(int distance){
+		int fuelPerKm = 29;
+		fuelCost = distance * fuelPerKm;
 
+		return fuelCost;
+	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	int get_totalCost() {
+		return fuelCost + timeCost;
+	}
 
 };
 
-
 int main() {
 
-
 	InputUsr input("Paris", "Istanbul");
-
-
-
-
-
-
+	input.setCompansation(1000);
+	input.setExtraSal(10);
 
 	return 0;
 }
