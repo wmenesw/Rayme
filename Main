@@ -1,0 +1,127 @@
+//============================================================================
+// Name        : dynamicRerouter.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include "string.h"
+
+using namespace std;
+
+class InputUsr{
+private:
+	string origin;
+	string dest;
+
+public:
+	InputUsr(string o, string d) {
+		origin = o;
+		dest = d;
+	}
+
+
+	void setOrigin(string o){
+		origin = o;
+	}
+	string getOrigin(){
+		return origin;
+	}
+	void setDest(string d){
+		dest = d;
+	}
+	string getDest(){
+		return dest;
+	}
+};
+
+class InputAPI{
+
+private:
+	int trafficRate;
+	string failedEqpName;
+	int eqpFailRate;
+	int accidentRate;
+
+public:
+	int getAccidentRate() const {
+		return accidentRate;
+	}
+
+	void setAccidentRate(int accidentRate) {
+		this->accidentRate = accidentRate;
+	}
+
+	int getEqpFailRate() const {
+		return eqpFailRate;
+	}
+
+	void setEqpFailRate(int eqpFailRate) {
+		this->eqpFailRate = eqpFailRate;
+	}
+
+	const string& getFailedEqpName() const {
+		return failedEqpName;
+	}
+
+	void setFailedEqpName(const string& failedEqpName) {
+		this->failedEqpName = failedEqpName;
+	}
+
+	int getTrafficRate() const {
+		return trafficRate;
+	}
+
+	void setTrafficRate(int trafficRate) {
+		this->trafficRate = trafficRate;
+	}
+};
+
+
+class costCalc{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+};
+
+
+int main() {
+
+
+	InputUsr input("Paris", "Istanbul");
+
+
+
+
+
+
+
+	return 0;
+}
